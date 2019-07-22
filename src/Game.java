@@ -42,18 +42,17 @@ class Game {
     }
 
     String hiddenTitleUpdate(String randomTitle, String letterOrTitle, String hiddenTitle){
-        String hiddenTitle1 = hiddenTitle;
         for (int i = 0; i < randomTitle.length(); i++) {
             if (String.valueOf(randomTitle.charAt(i)).equals(letterOrTitle)) {
                 if (i > 0 && i < (randomTitle.length() - 1)) {
-                    hiddenTitle1 = hiddenTitle.substring(0, (i)) + randomTitle.charAt(i) + hiddenTitle.substring((i + 1), randomTitle.length());
+                    hiddenTitle = hiddenTitle.substring(0, (i)) + randomTitle.charAt(i) + hiddenTitle.substring((i + 1), randomTitle.length());
                 } else if (i == 0) {
-                    hiddenTitle1 = randomTitle.charAt(i) + hiddenTitle.substring(1, randomTitle.length());
+                    hiddenTitle = randomTitle.charAt(i) + hiddenTitle.substring(1, randomTitle.length());
                 } else if (i == (randomTitle.length() - 1)) {
-                    hiddenTitle1 = hiddenTitle.substring(0, i) + randomTitle.charAt(i);
+                    hiddenTitle = hiddenTitle.substring(0, i) + randomTitle.charAt(i);
                 }
             }
         }
-        return hiddenTitle1;
+        return hiddenTitle;
     }
 }
